@@ -1258,7 +1258,7 @@ def get_commit_url() -> str:
     try:
         hash_ = get_git_hash()
         return (
-            f'<a href="https://github.com/HookDev-arch/Hikko{hash_}">#{hash_[:7]}</a>'
+            f'<a href="https://github.com/HookDev-arch/Hikko/{hash_}">#{hash_[:7]}</a>'
         )
     except Exception:
         return "Unknown"
