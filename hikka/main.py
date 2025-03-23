@@ -757,8 +757,6 @@ class Hikka:
             upd = "Update required" if diff else "Up-to-date"
 
             logo = (
-                "█ █ █ █▄▀ █▄▀ ▄▀█\n"
-                "█▀█ █ █ █ █ █ █▀█\n\n"
                 f"• Build: {build[:7]}\n"
                 f"• Version: {'.'.join(list(map(str, list(__version__))))}\n"
                 f"• {upd}\n"
@@ -772,7 +770,7 @@ class Hikka:
                     else ""
                 )
                 logging.debug(
-                    "\n🌘 Hikka %s #%s (%s) started\n%s",
+                    "\n🌘 Hook %s #%s (%s) started\n%s",
                     ".".join(list(map(str, list(__version__)))),
                     build[:7],
                     upd,
