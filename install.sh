@@ -3,23 +3,23 @@
 
 runin() {
 	# Runs the arguments, piping stderr to logfile
-	{ "$@" 2>>../Hook-install.log || return $?; } | while read -r line; do
-		printf "%s\n" "$line" >>../Hook-install.log
+	{ "$@" 2>>../hook-install.log || return $?; } | while read -r line; do
+		printf "%s\n" "$line" >>../hook-install.log
 	done
 }
 
 runout() {
 	# Runs the arguments, piping stderr to logfile
-	{ "$@" 2>>Hook-install.log || return $?; } | while read -r line; do
-		printf "%s\n" "$line" >>Hook-install.log
+	{ "$@" 2>>hook-install.log || return $?; } | while read -r line; do
+		printf "%s\n" "$line" >>hook-install.log
 	done
 }
 
 errorin() {
-	cat ../Hook-install.log
+	cat ../hook-install.log
 }
 errorout() {
-	cat Hook-install.log
+	cat hook-install.log
 }
 
 SUDO_CMD=""
@@ -34,33 +34,34 @@ fi
 clear
 clear
 
+
 printf "\n\n\e[3;34;40m Installing...\e[0m\n\n"
 
 ##############################################################################
 
 printf "\r\033[0;34mPreparing for installation...\e[0m"
 
-touch Hook-install.log
+touch hook-install.log
 if [ ! x"$SUDO_USER" = x"" ]; then
-	chown "$SUDO_USER:" Hook-install.log
+	chown "$SUDO_USER:" hook-install.log
 fi
 
-if [ -d "Hook/Hook" ]; then
-	cd Hook || {
+if [ -d "hook/hook" ]; then
+	cd hook || {
 		printf "\rError: Install git package and re-run installer"
 		exit 6
 	}
 	DIR_CHANGED="yes"
 fi
 if [ -f ".setup_complete" ]; then
-	# If Hook is already installed by this script
+	# If hook is already installed by this script
 	PYVER=""
 	if echo "$OSTYPE" | grep -qE '^linux-gnu.*'; then
 		PYVER="3"
 	fi
 	printf "\rExisting installation detected"
 	clear
-	"python$PYVER" -m Hook "$@"
+	"python$PYVER" -m hook "$@"
 	exit $?
 elif [ "$DIR_CHANGED" = "yes" ]; then
 	cd ..
@@ -68,7 +69,7 @@ fi
 
 ##############################################################################
 
-echo "Installing..." >Hook-install.log
+echo "Installing..." >hook-install.log
 
 if echo "$OSTYPE" | grep -qE '^linux-gnu.*' && [ -f '/etc/debian_version' ]; then
 	PKGMGR="apt install -y"
@@ -129,7 +130,7 @@ runout ${SUDO_CMD}git clone https://github.com/HookDev-arch/Hikko/ || {
 	errorout "Clone failed."
 	exit 3
 }
-cd Hook || {
+cd hook || {
 	printf "\r\033[0;33mRun: \033[1;33mpkg install git\033[0;33m and restart installer"
 	exit 7
 }
@@ -144,13 +145,13 @@ runin "$SUDO_CMD python$PYVER" -m pip install -r requirements.txt --upgrade --us
 	errorin "Requirements failed!"
 	exit 4
 }
-rm -f ../Hook-install.log
+rm -f ../hook-install.log
 touch .setup_complete
 
 printf "\r\033[K\033[0;32mDependencies installed!\e[0m"
 printf "\n\033[0;32mStarting...\e[0m\n\n"
 
-${SUDO_CMD}"python$PYVER" -m Hook "$@" || {
+${SUDO_CMD}"python$PYVER" -m hikka "$@" || {
 	printf "\033[1;31mPython scripts failed\e[0m"
 	exit 5
 }
