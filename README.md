@@ -1,36 +1,14 @@
-<a href="https://deepsource.io/gh/hikariatama/Hook/?ref=repository-badge"><img src="https://deepsource.io/gh/hikariatama/Hook.svg/?label=active+issues&show_trend=true&token=IPVI_QX-cSuQSVeVl8cb5PLt" alt="DeepSource"></a>
-<a href="https://deepsource.io/gh/hikariatama/Hook/?ref=repository-badge"><img src="https://deepsource.io/gh/hikariatama/Hook.svg/?label=resolved+issues&show_trend=true&token=IPVI_QX-cSuQSVeVl8cb5PLt" alt="DeepSource"></a><br>
-<a href="https://www.codacy.com/gh/hikariatama/Hook/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hikariatama/Hook&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/97e3ea868f9344a5aa6e4d874f83db14"/></a>
-<a href="#"><img src="https://img.shields.io/github/languages/code-size/hikariatama/Hook"/></a>
-<a href="#"><img src="https://img.shields.io/github/issues-raw/hikariatama/Hook"/></a>
-<a href="#"><img src="https://img.shields.io/github/license/hikariatama/Hook"/></a>
-<a href="#"><img src="https://img.shields.io/github/commit-activity/m/hikariatama/Hook"/></a><br>
-<a href="#"><img src="https://img.shields.io/github/forks/hikariatama/Hook?style=flat"/></a>
-<a href="#"><img src="https://img.shields.io/github/stars/hikariatama/Hook"/></a>&nbsp;<a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a><br>
+I welcome everyone who has come to this page. I am a Russian software developer. Since the original creator of Hikka closed the project (it is no longer supported and he decided to start a new one), I decided to breathe life into this project and give it a second chance (or maybe not a second).
 
-<hr>
+This repository is not just a fork of the original. Right now, I'm actively researching and rewriting the code (as you can tell from the commits). As I said above, my goal is not to copy-paste the original code.
 
-<b>Warning: </b>If you are a paranoid person, you should not use this userbot. This userbot is not a virus, but it can be used for malicious purposes. You are responsible for all actions taken by your account.  
-  
-**Important notice**: Versions `1.6.4` and `1.7.0` will NOT be released due to the reasons mentioned in the chanelog.  
-The development will start from scratch with a new project, which will be announced later.  
-As of March 2025, you can apply for an early stage of alpha-testing through the official channels.  
-
-<hr>
-<h2><img src="https://github.com/hikariatama/assets/raw/master/1326-command-window-line-flat.webp" height="54" align="middle"> Installation</h2>
-
-### Installation page
-
-<img src="https://github.com/hikariatama/assets/raw/master/install_qr.gif" height="256">
-
-<a href="https://t.me/lavhostbot?start=SGlra2E"><img src="https://user-images.githubusercontent.com/36935426/167272288-85f00779-4b98-47da-8d0d-ea2c6370b979.png" height="40"></a>
 
 <h2>Local installation:</h2>
 Simply run this command out of <b>root</b> and follow the instructions of installer:<br>
-<code>. <(wget -qO- https://hikariatama.ru/get_hikka)</code><br>
+<code>. <(wget -qO- https://github.com/HookDev-arch/Hikko/blob/master/install.sh)</code><br>
 <br>
 <b>Manual installation (no script):</b><br>
-<code>apt update && apt install git libcairo2 -y && git clone https://github.com/hikariatama/Hook && cd Hook && pip install -r requirements.txt && python3 -m Hook</code><br.>
+<code>apt update && apt install git libcairo2 -y && git clone https://github.com/HookDev-arch/Hikko/ && cd Hook && pip install -r requirements.txt && python3 -m hikka</code><br.>
 <i>If you are on VPS\VDS, type <code>--proxy-pass</code> in the end of command to open SSH tunnel to your Hook web interface, or use <code>--no-web</code> to complete setup in console</i><br>
 <br>
 <b>Some further details:</b>
